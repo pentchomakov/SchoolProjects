@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Narrow Jumbotron Template for Bootstrap</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+    <link href="css/audioplayer.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="header clearfix">
+        <h3 class="text-muted">Home Audio System</h3>
+    </div>
+
+    <div class="jumbotron">
+        <h1>Home Audio System</h1>
+    </div>
+
+    <div class="row col-md-8 col-md-offset-2 col-xs-12">
+        <div id="audio-player">
+            <audio src="sound/Concerto-No.-3-Allegro-Adagio.mp3" preload="auto" controls></audio>
+        </div>
+    </div>
+
+    <div class="row marketing">
+        <div class="col-lg-12">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#nowPlaying">Now Playing</a>
+                        </h4>
+                    </div>
+                    <div id="nowPlaying" class="panel-collapse collapse">
+                        <div class="panel-body">
+
+                            <select id="players" name="players"></select>
+
+                            <ul id="locationsPlayingList" class="list-group">
+
+                            </ul>
+
+                            <ul id="nowPlayingList" class="list-group">
+
+                            </ul>
+
+                            <button id="startPlaying" type="button" class="btn btn-primary">Start Playing</button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Add Album</a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <form id="createAlbum">
+                                <p>Album Name: <input type="text" name="albumName"/></p>
+                                <p>Release Date: <input type="date" name="albumReleaseDate"/></p>
+                                <p>Genre:
+                                    <select name="albumGenre">
+                                        <option>Pop</option>
+                                        <option>Rock</option>
+                                        <option>Alternative</option>
+                                        <option>Rap</option>
+                                        <option>RB</option>
+                                        <option>Classical</option>
+                                        <option>Jazz</option>
+                                        <option>Contemporary</option>
+                                        <option>Country</option>
+                                        <option>Electronic</option>
+                                        <option>Latin</option>
+                                        <option>Gospel</option>
+                                        <option>Comedy</option>
+                                        <option>Reggae</option>
+                                        <option>AmericanRoots</option>
+                                    </select>
+
+                                </p>
+                                <p>Artist: <select name="albumArtist"></select></p>
+                                <button id="createAlbumButton" type="button" class="btn btn-primary">Create Album
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Add Artist</a>
+                        </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <form id="createArtist">
+                                <p>Artist Name: <input type="text" name="artistName"/></p>
+                                <button id="createArtistButton" type="button" class="btn btn-primary">Create Artist
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Add Song</a>
+                        </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <form id="createSong">
+                                <p>Song Title: <input type="text" name="songName"/></p>
+                                <p>Duration: <input type="time" name="songDuration"/></p>
+                                <p>Track Number: <input type="text" name="songAlbumPosition"/></p>
+                                <p>Album Name: <select name="songArtist"></select></p>
+                                <button id="createSongButton" type="button" class="btn btn-primary">Create Song</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Create Playlist</a>
+                        </h4>
+                    </div>
+                    <div id="collapse4" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <form id="createPlaylist">
+                                <p>Playlist Name: <input type="text" name="playlistName"/></p>
+                                <button id="createPlaylistButton" type="button" class="btn btn-primary">Create Song
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Add Song to
+                                Playlist</a>
+                        </h4>
+                    </div>
+                    <div id="collapse5" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <form id="addSongToPlaylist">
+                                <p>Playlist: <select id="songPlaylistName" name="playlistName"></select></p>
+                                <p>Song Name: <select id="playlistSongs"></select></p>
+                                <button id="addSongToPlaylistButton" type="button" class="btn btn-primary">Add Song
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Add Album to
+                                Playlist</a>
+                        </h4>
+                    </div>
+                    <div id="collapse6" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <form id="addAlbumToPlaylist">
+                                <p>Playlist: <select id="albumPlaylistName" name="playlistName"></select></p>
+                                <p>Album Name: <select id="playlistAlbums"></select>
+
+                                </p>
+
+                                <button id="addAlbumToPlaylistButton" type="button" class="btn btn-primary">Add Album
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">Add Artist to
+                                Playlist</a>
+                        </h4>
+                    </div>
+                    <div id="collapse7" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <form id="addArtistToPlaylist">
+                                <p>Playlist: <select id="artistPlaylistName" name="playlistName"></select></p>
+                                <p>Artist: <select id="playlistArtists"></select></p>
+                                <button id="addArtistToPlaylistButton" type="button" class="btn btn-primary">Add
+                                    Artist
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">Add Location</a>
+                        </h4>
+                    </div>
+                    <div id="collapse8" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul id="locationList" class="list-group">
+                                <!--li class="list-group-item">Cras justo odio</li-->
+                            </ul>
+
+                            <form id="createLocation">
+                                <p>Location Name: <input type="text" name="locationName"/></p>
+                                <button id="createLocationButton" type="button" class="btn btn-primary">Create Location
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">Add Player</a>
+                        </h4>
+                    </div>
+                    <div id="collapse9" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul id="playerList" class="list-group">
+                                <!--li class="list-group-item">Cras justo odio</li-->
+                            </ul>
+
+                            <form id="createPlayer">
+                                <p>Player Name: <input type="text" name="playerName"/></p>
+                                <button id="createPlayerButton" type="button" class="btn btn-primary">Create Player
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">Add Playlist to
+                                Player</a>
+                        </h4>
+                    </div>
+                    <div id="collapse10" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <form id="addPlaylistToPlayer">
+                                <p>Playlist: <select id="playlistPlaylist" name="playlistName"></select></p>
+                                <p>Player: <select id="playlistPlayer" name="players"></select></p>
+                                <button id="addPlaylistToPlayerButton" type="button" class="btn btn-primary">Add
+                                    Playlist
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; PAMP Labs</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+    <!--script-- src="js/bootstrap3-player.js"></script-->
+    <script src="js/player.js"></script>
+    <script src="js/app.js"></script>
+</div>
+</body>
+</html>

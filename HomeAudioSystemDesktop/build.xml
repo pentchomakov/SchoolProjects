@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="HomeAudioSystem">
+<property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../../eclipse/"/>
+    <property name="junit.output.dir" value="test"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}plugins/org.junit_4.11.0.v201303080030/junit.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
+    <path id="HomeAudioSystem.classpath">
+        <pathelement location="bin"/>
+        <path refid="JUnit 4.libraryclasspath"/>
+        <pathelement location="lib/jdatepicker-1.3.4.jar"/>
+        <pathelement location="lib/xmlpull-1.1.3.1.jar"/>
+        <pathelement location="lib/xpp3_min-1.1.4c.jar"/>
+        <pathelement location="lib/xstream-1.4.7.jar"/>
+        <pathelement location="lib/easymock-3.4.jar"/>
+        <pathelement location="lib/apache-mime4j-0.6.jar"/>
+        <pathelement location="lib/bsh-2.0b4.jar"/>
+        <pathelement location="lib/cglib-nodep-2.1_3.jar"/>
+        <pathelement location="lib/commons-codec-1.10.jar"/>
+        <pathelement location="lib/commons-exec-1.3.jar"/>
+        <pathelement location="lib/commons-io-2.4.jar"/>
+        <pathelement location="lib/commons-logging-1.2.jar"/>
+        <pathelement location="lib/gson-2.3.1.jar"/>
+        <pathelement location="lib/guava-19.0.jar"/>
+        <pathelement location="lib/hamcrest-core-1.3.jar"/>
+        <pathelement location="lib/hamcrest-library-1.3.jar"/>
+        <pathelement location="lib/httpclient-4.5.1.jar"/>
+        <pathelement location="lib/httpcore-4.4.3.jar"/>
+        <pathelement location="lib/httpmime-4.5.jar"/>
+        <pathelement location="lib/jcommander-1.48.jar"/>
+        <pathelement location="lib/jna-4.1.0.jar"/>
+        <pathelement location="lib/jna-platform-4.1.0.jar"/>
+        <pathelement location="lib/junit-4.12.jar"/>
+        <pathelement location="lib/netty-3.5.7.Final.jar"/>
+        <pathelement location="lib/phantomjsdriver-1.2.1.jar"/>
+        <pathelement location="lib/selenium-java-2.53.0-srcs.jar"/>
+        <pathelement location="lib/selenium-java-2.53.0.jar"/>
+        <pathelement location="lib/testng-6.9.9.jar"/>
+        <pathelement location="forms-1.3.0.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.ucls"/>
+                <exclude name="**/*.useq"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="test">
+                <exclude name="**/*.ucls"/>
+                <exclude name="**/*.useq"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+	
+    <target name="clean">
+        <delete dir="bin"/>
+    	<delete dir="jar"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <src path="test"/>
+            <classpath refid="HomeAudioSystem.classpath"/>
+        </javac>
+    </target>
+	
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+	
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+	
+    <target name="HomeAudioSystem (1)">
+        <java classname="application.HomeAudioSystem" failonerror="true" fork="yes">
+            <classpath refid="HomeAudioSystem.classpath"/>
+        </java>
+    </target>
+	
+    <target name="TestPersistence (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="persistence.TestPersistence" todir="${junit.output.dir}"/>
+            <classpath refid="HomeAudioSystem.classpath"/>
+        </junit>
+    </target>
+	
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+	
+
+	    <target name="exportjar" depends="build" description="Produces an executable file" >
+	    	<mkdir dir="jar"/>
+	    		<jar destfile= "jar/HomeAudioSystem.jar" basedir="bin">
+	    			<manifest>
+	    				<attribute name="Main-Class" value="HomeAudioSystem.HomeAudioSystem"/>
+	    			</manifest>
+	    		</jar> 
+	    </target>
+	
+	
+</project>

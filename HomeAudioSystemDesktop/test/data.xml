@@ -1,0 +1,14 @@
+<model.HomeAudioSystem id="1">
+  <locations id="2"/>
+  <songs id="3"/>
+  <artists id="4">
+    <Artist id="5">
+      <name>Adele</name>
+      <songs id="6"/>
+      <albums id="7"/>
+    </Artist>
+  </artists>
+  <albums id="8"/>
+  <playlists id="9"/>
+  <players id="10"/>
+</model.HomeAudioSystem>

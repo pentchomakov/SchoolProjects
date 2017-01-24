@@ -1,0 +1,5 @@
+Yes
+aW 263---- 21251 0 0.5  (Since it is a println, each answer should be on a the next line)
+int, String, String, int, double, String (last one doesn't have a semi-colon... in theory, it would not run)
+8, 6, 5, 7, 8, 3, 3, 6, 7, 3, 5, 8, 609638400
+Sum is: 176725480904, The 42nd term is: 23837527729, Sum of the first 45 terms mod the 42nd term is: 9862786801

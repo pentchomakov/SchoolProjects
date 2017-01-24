@@ -1,0 +1,21 @@
+namespace ca.mcgill.ecse321.HomeAudioSystem.model;
+
+class Genre{
+
+const Pop= 1; 
+const Rock = 2;
+const Alternative= 3;
+const Rap= 4;
+const RB= 5;
+const Classical=6;
+const Jazz=7;  
+const Contemporary=8;
+const Country=9;
+const Electronic=10;
+const Latin=11;
+const Gospel=12;
+const Comedy=13;
+const Reggae=14;
+const AmericanRoots=15;
+
+}

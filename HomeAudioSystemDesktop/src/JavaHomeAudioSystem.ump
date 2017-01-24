@@ -1,0 +1,14 @@
+namespace model;
+
+class Album {
+  public enum Genre {Pop, Rock, Alternative, Rap, RB, Classical, Jazz, Contemporary, Country, Electronic, Latin, Gospel, Comedy, Reggae, AmericanRoots}; 
+  private Genre genre;
+  
+  public void setGenre(Genre genre){
+    genre=genre;
+  }
+    
+   public Genre getGenre(){
+     return genre;      
+   }  
+}

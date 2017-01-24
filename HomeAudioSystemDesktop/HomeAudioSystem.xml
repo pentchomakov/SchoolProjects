@@ -1,0 +1,68 @@
+<model.HomeAudioSystem id="1">
+  <locations id="2">
+    <Location id="3">
+      <name>Bedroom</name>
+      <volume>50</volume>
+      <muted>false</muted>
+    </Location>
+  </locations>
+  <songs id="4">
+    <Song id="5">
+      <title>Take Care</title>
+      <duration id="6">00:03:00</duration>
+      <albumPos>1</albumPos>
+      <album id="7">
+        <name>Take Care</name>
+        <releaseDate id="8">2016-04-29</releaseDate>
+        <songs id="9">
+          <Song reference="5"/>
+        </songs>
+        <artist id="10">
+          <name>Drake</name>
+          <songs id="11"/>
+          <albums id="12">
+            <Album reference="7"/>
+          </albums>
+        </artist>
+        <genre>Rap</genre>
+      </album>
+      <playlist id="13">
+        <title>Turnt</title>
+        <songs id="14">
+          <Song reference="5"/>
+        </songs>
+      </playlist>
+    </Song>
+  </songs>
+  <artists id="15">
+    <Artist reference="10"/>
+    <Artist id="16">
+      <name>Adele</name>
+      <songs id="17"/>
+      <albums id="18"/>
+    </Artist>
+    <Artist id="19">
+      <name>Zayn</name>
+      <songs id="20"/>
+      <albums id="21"/>
+    </Artist>
+  </artists>
+  <albums id="22">
+    <Album reference="7"/>
+  </albums>
+  <playlists id="23">
+    <Playlist reference="13"/>
+  </playlists>
+  <players id="24">
+    <model.Player id="25">
+      <playlists id="26"/>
+      <songs id="27">
+        <Song reference="5"/>
+      </songs>
+      <albums id="28"/>
+      <locations id="29"/>
+      <play class="linked-list" id="30"/>
+      <name>Player1</name>
+    </model.Player>
+  </players>
+</model.HomeAudioSystem>
